@@ -55,71 +55,7 @@ int main(int argc, char * argv[])
     return 0;
 }
 
-/*сортировка подсчётом*/
-void counting_sort(int *a, int n)
-{	
 
-	int i, j, idx = 0;
-	int min = a[0];
-	int max = a[0];
-	
-	for(i = 1; i < n; i++){
-		if(a[i] < min)
-			min = a[i];
-		if(a[i] > max)
-			max = a[i];
-}
-	printf("min=%d max=%d \n", min,max);
-	
-	int k = max - min + 1;
-	int b[k]; 
-	
-	for(i = 0; i < k; i++){
-		b[i - min] = 0;
-}
-
-	for(i = 0; i < n; i++){
-		b[a[i] - min]++;
-		for(i = min; i <= max; i++){
-}
-		for(j = 0; j < b[i - min]; j++){
-			a[idx++] = i;
-}
-}
-	for(i = 0; i < n; i++){
-		printf("%d ", a[i]);
-}
-}
-/*сортировка вставкой*/
-void insertion_sort(int *a, int n)
-{	
-	int i, j, key;
-	
-	int min = a[0];
-	int max = a[0];
-	
-	for(i = 1; i < n; i++){
-		if(a[i] < min)
-			min = a[i];
-		if(a[i] > max)
-			max = a[i];
-}
-	
-	/*sort*/
-	for ( i=0; i < n; i++) {  
-    key = a[i];
-	for ( j = i-1; j >= 0 && a[j] > key; j--){
-		a[j+1] = a[j];  	
-}
-	a[j+1] = key;
-}
-
-/*output*/
-	for(i = 0; i < n; i++){
-		printf("%d \n", a[i]);
-}
-printf("min=%d max=%d \n", min,max);
-}
 
 /*пиромидальная сортировка*/
 
