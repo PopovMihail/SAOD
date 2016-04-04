@@ -2,7 +2,6 @@
 #define BSTREE_H
 
 
-
 typedef struct BSTree
 {
 	char *key;
