@@ -1,26 +1,20 @@
-#include "bstree.h"
+#include "hesh_tab.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 
-
-int main() 
+int main()
 {
-	bstree *tree, *node;
-	tree = bstree_create("Tigr", 180);
+	listnode *node;
 	
-	bstree_add(tree, "Lev", 200);
-	bstree_add(tree, "Volk", 60);
-	bstree_add(tree, "Suslik", 5);
-	bstree_add(tree, "Rabit", 2);
-	
-	node = bstree_lookup(tree, "Rabit");
-	printf("Value = %d\n", node->value);
-	
-	node = bstree_max(tree);
-	printf("Min: value = %s\n", node->key);
+	hashtab_init(hashtab);
 
-	return 0;
+	hashtab_add(hashtab, "Tigr", 190);
+	hashtab_add(hashtab, "Slon", 2300);
+	hashtab_add(hashtab, "Volk", 60);
+
+	node = hashtab_lookup(hashtab, "Slon");
+
+	printf("Node: %s, %d\n",node->key, node->value);
+return 0;
 }
-
-
