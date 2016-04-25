@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *f = fopen("test_look.txt", "a");
+	FILE *f = fopen("test_min.txt", "a");
       
     FILE *dictionary = fopen("text.txt", "r");
     
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     srand(time(NULL));
     int rand_node = rand() % size;
     
-    //printf("%d\n", rand_node);
+   // printf("%d\n", rand_node);
     
 
     char *rand_data = malloc(sizeof(char)*100);
@@ -33,20 +33,20 @@ int main(int argc, char *argv[]) {
 			tree = bstree_create(ftemp, i);
 		else
 			bstree_add(tree, ftemp, i);
-			
-  
+	
         
         if (i == rand_node)
         {
             strcpy(rand_data, ftemp);
+		
         }
+       // free(ftemp);
     }
     //printf("%s\n", rand_data);
     
-    
     bstree *lkt ;
     double t = clock();
-    lkt = bstree_lookup(tree, rand_data);
+    lkt = bstree_min(tree);
     fprintf(f, "%d\t%.8f\n", size, (clock() - t) / CLOCKS_PER_SEC);
     printf("%s %d\n", lkt->key, lkt->value);
     
